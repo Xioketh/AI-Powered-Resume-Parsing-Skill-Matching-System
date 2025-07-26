@@ -26,12 +26,12 @@ st.markdown("""
     .header {
         font-size: 36px !important;
         font-weight: bold !important;
-        color: #2a3f5f !important;
+        color: #00e673 !important;
         margin-bottom: 10px !important;
     }
     .subheader {
         font-size: 18px !important;
-        color: #4a6b8a !important;
+        color: #00994d !important;
         margin-bottom: 30px !important;
     }
     .card {
@@ -44,7 +44,7 @@ st.markdown("""
     .card-header {
         font-size: 20px;
         font-weight: bold;
-        color: #2a3f5f;
+        color: #e6e6e6;
         margin-bottom: 15px;
         display: flex;
         align-items: center;
@@ -55,7 +55,7 @@ st.markdown("""
         font-weight: bold;
     }
     .match-high {
-        color: #2e7d32;
+        color: #a2dda5;
     }
     .match-medium {
         color: #f9a825;
@@ -152,10 +152,10 @@ def main():
                 required_skills = selected_skills if selected_skills else None
 
             # Display selected skills as chips
-            if required_skills:
-                st.markdown("**Selected skills:**")
-                chips = "".join([f'<span class="skill-chip">{skill}</span>' for skill in required_skills])
-                st.markdown(chips, unsafe_allow_html=True)
+            # if required_skills:
+                # st.markdown("**Selected skills:**")
+                # chips = "".join([f'<span class="skill-chip">{skill}</span>' for skill in required_skills])
+                # st.markdown(chips, unsafe_allow_html=True)
 
         # Parse button at the bottom of the left column
         parse_btn = st.button("Analyze CV", type="primary", use_container_width=True)
