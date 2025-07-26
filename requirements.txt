@@ -1,4 +1,7 @@
-pdf2image
+pdfplumber
 pytesseract
+pillow
 transformers
 sentence-transformers
+python-multipart
+streamlit
