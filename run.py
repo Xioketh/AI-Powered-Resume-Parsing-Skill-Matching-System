@@ -5,12 +5,11 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
-
 cloudinary.config(
-  cloud_name = st.secrets["cloudinary"]["cloud_name"],
-  api_key = st.secrets["cloudinary"]["api_key"],
-  api_secret = st.secrets["cloudinary"]["api_secret"],
-  secure = True
+    cloud_name=st.secrets["CLOUDINARY"]["cloud_name"],
+    api_key=st.secrets["CLOUDINARY"]["api_key"],
+    api_secret=st.secrets["CLOUDINARY"]["api_secret"],
+    secure = True
 )
 
 # Set page config
