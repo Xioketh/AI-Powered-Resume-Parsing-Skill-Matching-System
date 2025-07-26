@@ -1,6 +1,17 @@
 import streamlit as st
 from app import parse_scanned_cv
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+
+cloudinary.config(
+  cloud_name = st.secrets["cloudinary"]["cloud_name"],
+  api_key = st.secrets["cloudinary"]["api_key"],
+  api_secret = st.secrets["cloudinary"]["api_secret"],
+  secure = True
+)
 
 # Set page config
 st.set_page_config(
@@ -161,6 +172,15 @@ def main():
             # Parse the CV
             with st.spinner("Analyzing CV. This may take a moment..."):
                 try:
+                    upload_result = cloudinary.uploader.upload(
+                        "temp_cv.pdf",
+                        folder="cv_uploads",
+                        resource_type="raw"  # For PDF files
+                    )
+            
+                    # Store the Cloudinary URL in your result if needed
+                    cloudinary_url = upload_result.get('secure_url')
+            
                     result = parse_scanned_cv("temp_cv.pdf", required_skills)
 
                     # Display results in cards
